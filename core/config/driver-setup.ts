@@ -4,7 +4,8 @@ import chrome from "selenium-webdriver/chrome";
 
 const driverPath = "./drivers/chromedriver"; // Path to the included ChromeDriver executable
 const options = new chrome.Options();
-
+options.addArguments("--headless"); // Run Chrome in headless mode
+options.addArguments("--disable-gpu");
 export default class DriverSetup {
   private static instance: DriverSetup;
   private driver: WebDriver;
