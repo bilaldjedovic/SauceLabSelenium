@@ -2,15 +2,8 @@ import { Builder, WebDriver } from "selenium-webdriver";
 
 import chrome from "selenium-webdriver/chrome";
 
-import path from "path";
-
-const driverPath = path.join(
-  process.env.GITHUB_WORKSPACE || "",
-  "drivers/chromedriver"
-);
+const driverPath = "drivers/chromedriver";
 const options = new chrome.Options();
-options.addArguments("--headless"); // Run Chrome in headless mode
-options.addArguments("--disable-gpu");
 
 export default class DriverSetup {
   private static instance: DriverSetup;
